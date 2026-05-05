@@ -51,7 +51,7 @@ def Inserir(values, table, fields=None):
 
 
 values = [
-    "DEFAULT, 'Marcotti', '2000-08-09', 'Av. Salvador Allende, 3500', 'Rio de Janeiro', 'RJ', '444444'",
+    "DEFAULT, 'Marcotti', '2000-08-09', 'Av. AAAAAAAAAA, BBBBB', 'Rio de Janeiro', 'RJ', '444444'",
     
 
 ]
