@@ -18,11 +18,6 @@ con = MySQLdb.connect(host, user, password, db, port)
 c = con.cursor(MySQLdb.cursors.DictCursor)
 
 
-#Criando função seletora, para o banco de dados!
-
-#Repara-se que essa função, receberá strings como argumentos!
-
-#Observação: Deve-se procurar manter a sintaxe original da SQL, em todas as funções!
 
 def Seleciona(field, table, Where=None):
     global c #Fazendo Referência a variável global
@@ -51,7 +46,7 @@ def Inserir(values, table, fields=None):
 
 
 values = [
-    "DEFAULT, 'Marcotti', '2000-08-09', 'Av. AAAAAAAAAA, BBBBB', 'Rio de Janeiro', 'RJ', '444444'",
+    "DEFAULT, 'Marcotti', '2000-08-09', 'Av. AAAAAAAAAA, BBBBB', 'Estado AAAA', 'AA', '444444'",
     
 
 ]
@@ -68,9 +63,6 @@ def Atualizar(sets, table, where=None):
     c.execute(query)
     con.commit()
 
-#Atualizar({"nome":"Marcotti", "nome":"Meloni"}, "alunos", "id_alunos = 12")
-#Atualizar({"nome":"Meloni", "endereco":"Rua das Palmeiras, 497"}, "alunos", "id_alunos = 12")
-#Criando função, para deletar elementos do banco:
 
 def Deletar(table, where):
     global c, con
@@ -78,9 +70,3 @@ def Deletar(table, where):
     c.execute(query)
     con.commit()
 
-
-#OBSERVAÇÃO: A deleção de dados, é dependente da política , definida, na criação do banco de dados
-#Nesse caso, nem sempre será possível a eliminação, dessas informações!
-
-#print(Deletar("alunos","id_alunos = 12"))
-#print(Seleciona("*", "alunos"))
